@@ -1,0 +1,82 @@
+ssh -o "ServerAliveInterval 60" root@134.209.159.34
+password:fobsam#1Aa
+
+********************************************************************************
+
+Welcome to LiteSpeed One-Click CyberPanel Server.
+To keep this server secure, the firewalld is enabled.
+CyberPanel One-Click Quickstart guide:
+* https://docs.litespeedtech.com/cloud/images/cyberpanel/
+
+In a web browser, you can view:
+* CyberPanel: https://134.209.159.34:8090
+* phpMyAdmin: https://134.209.159.34:8090/dataBases/phpMyAdmin
+* Rainloop:   https://134.209.159.34:8090/rainloop
+
+On the server:
+* You can get the CyberPanel admin password with the following command:
+  sudo cat .litespeed_password
+* You can get the Mysql cyberpanel user password with the following command:
+  sudo cat .db_password
+
+System Status:
+  Load : 0.00, 0.00, 0.00
+  CPU  : 4.15256%
+  RAM  : 353/957MB (36.89%)
+  Disk : 5/34GB (18%)
+
+Your CyberPanel is up to date
+********************************************************************************
+
+You have new mail.
+Do you wish to update the system now? This will update the web server as well. [Y/n]? y
+Update Starting...
+#######################   (100%)
+Update complete
+
+Enjoy your accelarated CyberPanel server!
+
+root@successlifemantra:~# sudo cat .litespeed_password
+admin_pass=YUBVrAzclHIzHo8m
+_______________________________________________________________________________________
+
+password change cmd= adminPass anypassword
+
+dkim error cmd = chown cyberpanel:cyberpanel -R (error copy paste)
+________________________________________________________________________________________
+
+***************************************************************************************
+(user_details)
+
+user_id:Masfob
+password:Masfob@123
+
+user_id:Mindvision
+password:Mindvision@123
+
+****************************************************************************************
+nano /usr/local/lsws/conf/httpd_config.conf
+
+extprocessor cyberpanel {
+type                       proxy
+address                    https://adminpanel.yourdomain.lab:8090
+maxconns                   100
+pckeepAliveTimeout         60
+initrimeout                60
+retryTimeout               0
+respBuffer                 0
+}
+
+RewriteEngine On
+RewriteCond %(HTTPS) 1=on
+RewriteRule ^/?.*) https: //%{SERVER_NAME}/$1 [R,L]
+RewriteRule ^(•*)$ HTTP://cyberpanel/$1 [P]
+
+-----firewall off cmd----------
+sudo systemctl stop firewalld
+
+
+mail send to another businessmail platfrom send error
+
+*delist the first smtp protocal 
+wait after 30min to 1hour
