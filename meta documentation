@@ -1,3 +1,19 @@
 whatsapp  business api Phonenumber restiction link --->use as(Cloud API or On-Premises API.)
 
 https://developers.facebook.com/docs/whatsapp/on-premises/phone-numbers
+
+
+Phone Number Limits
+Business phone numbers can only be registered for use with one API at a time: Cloud API or On-Premises API.
+
+Business accounts are initially limited to 2 registered business phone numbers, but this limit can be increased to up to 20.
+
+If your business has been verified, or if you open 1,000 or more business-initiated conversations in a 30-day moving period using templates with a high quality rating, we will determine if your API usage warrants a phone number limit increase.
+
+If we determine an increase is warranted, we will automatically increase your limit and notify you by business_capability_update webhook and Meta Business Suite notification of your new limit.
+
+If we determine that an increase is not warranted, we will keep your limit at 2. If more than a week has passed since your business has been verified and your limit is still 2, ensure that you are monitoring phone number and message quality and take appropriate actions to improve your quality scores. After improving your quality scores, if we determine that your business warrants an increase, we will automatically increase your limit and notify you by webhook and Meta Business Suite notification of the new limit.
+
+If you have access to Enterprise Support and need your limit increased beyond 20, open a Direct Support Ticket with the following selections and explain why your need more than 20 numbers:
+
+WABiz: Account & WABA > Request type > Increase Phone Number Limits
